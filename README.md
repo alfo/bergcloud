@@ -1,4 +1,4 @@
-# BERGCloud
+# BERGCloud [![Build Status](https://travis-ci.org/alfo/bergcloud.svg)](https://travis-ci.org/alfo/bergcloud)
 
 A gem for interacting with [BERG's Cloud API v2](http://bergcloud.com/devcenter/api/v2/cloud-v2)
 

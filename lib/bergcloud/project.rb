@@ -16,7 +16,7 @@ module BERGCloud
       BERGCloud::Client.post("/projects/#{@project_id}/claims/#{claim_code}").body
     end
 
-    def claim_info(claim_code)
+    def claim_status(claim_code)
       BERGCloud::Client.get("/projects/#{@project_id}/claims/#{claim_code}").body
     end
 

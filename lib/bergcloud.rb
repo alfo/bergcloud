@@ -12,8 +12,8 @@ module BERGCloud
 
   class << self
 
-    def new(options = {})
-      BERGCloud::Client.api_token = options[:api_token]
+    def api_token=(api_token)
+      BERGCloud::Client.api_token = api_token
     end
   end
 

@@ -7,28 +7,38 @@ module BERGCloud
       @project_id = project_id
     end
 
-    def info
-      BERGCloud::Client.get("/projects/#{@project_id}")
+    def valid?
+      res = BERGCloud::Client.get("/projects/#{@project_id}")
+      if res.code == "200"
+        true
+      else
+        false
+      end
     end
 
     def claim(claim_code)
-      BERGCloud::Client.post("/projects/#{@project_id}/claims/#{claim_code}")
+      res = BERGCloud::Client.post("/projects/#{@project_id}/claims/#{claim_code}")
+      puts res[:body]
     end
 
     def claim_info(claim_code)
-      BERGCloud::Client.get("/projects/#{@project_id}/claims/#{claim_code}")
+      res = BERGCloud::Client.get("/projects/#{@project_id}/claims/#{claim_code}")
+      puts res[:body]
     end
 
     def devices
-      BERGCloud::Client.get("/projects/#{@project_id}/devices")
+      res = BERGCloud::Client.get("/projects/#{@project_id}/devices")
+      puts res[:body]
     end
 
     def events
-      BERGCloud::Client.get("/projects/#{@project_id}/events")
+      res = BERGCloud::Client.get("/projects/#{@project_id}/events")
+      puts res.
     end
 
     def send_command(options)
-      BERGCloud::Client.post("/projects/#{@project_id}/commands", options)
+      res = BERGCloud::Client.post("/projects/#{@project_id}/commands", options)
+      puts res.body
     end
 
   end

@@ -1,5 +1,5 @@
 module BERGCloud
-  class Error < StnadardError
+  class Error < StandardError
     attr_reader :object
 
     def initialize(object = nil)

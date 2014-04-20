@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = BERGCloud::VERSION
   spec.authors       = ["Alex Forey"]
   spec.email         = ["me@alexforey.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{BERG Cloud API Wrapper Gem}
+  spec.summary       = spec.description
   spec.homepage      = ""
   spec.license       = "MIT"
 

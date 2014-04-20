@@ -29,6 +29,7 @@ module BERGCloud
     end
 
     def send_command(options)
+      raise BERGCloud::Error::ParamsError, "Command must include a payload, name and device_id" unless options[:payload] and options[:device_id] and options[:name]
       BERGCloud::Client.post("/projects/#{@project_id}/commands", options).body
     end
 

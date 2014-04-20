@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["me@alexforey.com"]
   spec.description   = %q{BERG Cloud API Wrapper Gem}
   spec.summary       = spec.description
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/alfo/bergcloud"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
 end

@@ -2,7 +2,9 @@ module BERGCloud
 
   class Client
 
-    attr_accessor :api_token
+    def self.api_token
+      @api_token
+    end
 
     def self.api_token=(api_token)
       @api_token = api_token
@@ -32,8 +34,6 @@ module BERGCloud
 
       path = self.base_url + path
 
-      puts path
-
       # Make a request object
 
       case method
@@ -59,19 +59,19 @@ module BERGCloud
 
       case res.code.to_i
       when 200, 404
-        res.body = JSON.parse(res.body) rescue []
+        res.body = JSON.parse(res.body) rescue nil
         if res.body.is_a?(Hash)
           res.body = Hash[res.body.map{ |k, v| [k.to_sym, v] }]
         end
       when 400, 422
         puts "Malformed request"
-        raise BERGCloud::Error, "Malformed request"
+        raise BERGCloud::Error::RequestError, "Malformed request"
       when 500
         puts "Server Error"
-        raise BERGCloud::Error, "Server error"
+        raise BERGCloud::Error::RequestError, "Server error"
       else
         puts "Something else went wrong"
-        raise BERGCloud::Error, "Something else went wrong"
+        raise BERGCloud::Error::RequestError, "Something else went wrong. Response code was: #{res.code}"
       end
 
       return res

@@ -8,7 +8,7 @@ module BERGCloud
     end
 
     def info
-      BERGCloud::Client.get("/commands/#{@event_id}")
+      BERGCloud::Client.get("/commands/#{@event_id}").body
     end
 
   end

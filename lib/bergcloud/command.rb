@@ -8,11 +8,11 @@ module BERGCloud
     end
 
     def info
-      BERGCloud::Client.get("/commands/#{@command_id}")
+      BERGCloud::Client.get("/commands/#{@command_id}").body
     end
 
     def delete
-      BERGCloud::Client.delete("/commands/#{@command_id}")
+      BERGCloud::Client.delete("/commands/#{@command_id}").body
     end
 
   end

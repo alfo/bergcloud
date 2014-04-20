@@ -9,36 +9,27 @@ module BERGCloud
 
     def valid?
       res = BERGCloud::Client.get("/projects/#{@project_id}")
-      if res.code == "200"
-        true
-      else
-        false
-      end
+      res.code == "200"
     end
 
     def claim(claim_code)
-      res = BERGCloud::Client.post("/projects/#{@project_id}/claims/#{claim_code}")
-      puts res[:body]
+      BERGCloud::Client.post("/projects/#{@project_id}/claims/#{claim_code}").body
     end
 
     def claim_info(claim_code)
-      res = BERGCloud::Client.get("/projects/#{@project_id}/claims/#{claim_code}")
-      puts res[:body]
+      BERGCloud::Client.get("/projects/#{@project_id}/claims/#{claim_code}").body
     end
 
     def devices
-      res = BERGCloud::Client.get("/projects/#{@project_id}/devices")
-      puts res[:body]
+      BERGCloud::Client.get("/projects/#{@project_id}/devices").body
     end
 
     def events
-      res = BERGCloud::Client.get("/projects/#{@project_id}/events")
-      puts res.
+      BERGCloud::Client.get("/projects/#{@project_id}/events").body
     end
 
     def send_command(options)
-      res = BERGCloud::Client.post("/projects/#{@project_id}/commands", options)
-      puts res.body
+      BERGCloud::Client.post("/projects/#{@project_id}/commands", options).body
     end
 
   end

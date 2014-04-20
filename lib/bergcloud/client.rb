@@ -60,6 +60,9 @@ module BERGCloud
       case res.code.to_i
       when 200, 404
         res.body = JSON.parse(res.body) rescue []
+        if res.body.is_a?(Hash)
+          res.body = Hash[res.body.map{ |k, v| [k.to_sym, v] }]
+        end
       when 400, 422
         puts "Malformed request"
         raise BERGCloud::Error, "Malformed request"

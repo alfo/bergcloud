@@ -20,46 +20,54 @@ Or install it yourself as:
 
 Get started:
 
-    BERGCloud.api_token = 'your_api_token'
+```ruby
+BERGCloud.api_token = 'your_api_token'
+```
 
 Project methods:
 
-    project = BERGCloud::Project.new('your_project_id')
+```ruby
+project = BERGCloud::Project.new('your_project_id')
 
-    # Check if a project is valid
-    project.valid? #=> true or false
+# Check if a project is valid
+project.valid? #=> true or false
 
-    # Claim a device
-    project.claim('your-claim-code')
+# Claim a device
+project.claim('your-claim-code')
 
-    # Check a claim status
-    project.claim_status('your-claim-code')
+# Check a claim status
+project.claim_status('your-claim-code')
 
-    # Send a command
-    project.send_command(:device_id => 'your_device_id', :name => 'my-command', :payload => [1, 2, 3])
+# Send a command
+project.send_command(:device_id => 'your_device_id', :name => 'my-command', :payload => [1, 2, 3])
 
-    # List devices
-    project.devices
+# List devices
+project.devices
 
-    # List events
-    project.events
+# List events
+project.events
+```
 
 Event methods:
 
-    event = BERGCloud::Event.new('my-event-id')
+```ruby
+event = BERGCloud::Event.new('my-event-id')
 
-    # Get event information
-    event.info
+# Get event information
+event.info
+```
 
 Command methods:
 
-    command = BERGCloud::Command.new('my-command-id')
+```ruby
+command = BERGCloud::Command.new('my-command-id')
 
-    # Get command info
-    command.info
+# Get command info
+command.info
 
-    # Remove a command from the queue
-    command.delete
+# Remove a command from the queue
+command.delete
+```
 
 ## Contributing
 

@@ -34,19 +34,21 @@ module BERGCloud
 
       path = self.base_url + path
 
+      req_params = JSON.generate(params, quirks_mode: true)
+
       # Make a request object
 
       case method
       when 'post'
         req = Net::HTTP::Post.new(path)
-        req.set_form_data(params)
+        req.body = req_params
       when 'get'
         req = Net::HTTP::Get.new(path)
       when 'delete'
         req = Net::HTTP::Delete.new(path)
       when 'put'
         req = Net::HTTP::Put.new(path)
-        req.set_form_data(params)
+        req.body = req_params
       end
 
 

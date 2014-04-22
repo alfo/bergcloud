@@ -69,6 +69,16 @@ command.info
 command.delete
 ```
 
+## Changelog
+
+### 1.0.1
+
+* Fixes inability to send commands (changes POST encoding to JSON)
+
+### 1.0.0
+
+* First Release
+
 ## Contributing
 
 1. Fork it

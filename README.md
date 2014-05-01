@@ -71,6 +71,10 @@ command.delete
 
 ## Changelog
 
+### 1.0.2
+
+* Requests returning 422 shouldn't be classed as errors because they are not failures
+
 ### 1.0.1
 
 * Fixes inability to send commands (changes POST encoding to JSON)

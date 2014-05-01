@@ -65,12 +65,12 @@ module BERGCloud
         if res.body.is_a?(Hash)
           res.body = Hash[res.body.map{ |k, v| [k.to_sym, v] }]
         end
-      when 400, 422
-        puts "Malformed request"
+      when 400
         raise BERGCloud::Error::RequestError, "Malformed request"
       when 500
-        puts "Server Error"
         raise BERGCloud::Error::RequestError, "Server error"
+      when 401
+        raise BERGCloud::Error::RequestError, "Make sure you've set BERGCloud.api_token"
       else
         puts "Something else went wrong"
         raise BERGCloud::Error::RequestError, "Something else went wrong. Response code was: #{res.code}"

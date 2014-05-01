@@ -74,6 +74,7 @@ command.delete
 ### 1.0.2
 
 * Requests returning 422 shouldn't be classed as errors because they are not failures
+* Add a nicer error message for 401, telling you that you forgot to set `BERGCloud.api_token`
 
 ### 1.0.1
 

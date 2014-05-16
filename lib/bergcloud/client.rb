@@ -60,7 +60,7 @@ module BERGCloud
       res = http.request(req)
 
       case res.code.to_i
-      when 200, 404
+      when 200, 404, 422
         res.body = JSON.parse(res.body) rescue nil
         if res.body.is_a?(Hash)
           res.body = Hash[res.body.map{ |k, v| [k.to_sym, v] }]

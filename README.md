@@ -71,6 +71,10 @@ command.delete
 
 ## Changelog
 
+### 1.0.3
+
+* Turns out I didn't fix the 422 error last  time
+
 ### 1.0.2
 
 * Requests returning 422 shouldn't be classed as errors because they are not failures

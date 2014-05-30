@@ -1,4 +1,4 @@
-# ![alt text](http://static.alfo.im/berg_logo.png "BERG") BERGCloud [![Build Status](https://travis-ci.org/alfo/bergcloud.svg)](https://travis-ci.org/alfo/bergcloud) [![Code Climate](https://codeclimate.com/github/alfo/bergcloud.png)](https://codeclimate.com/github/alfo/bergcloud)
+# ![alt text](http://static.alfo.im/berg_logo.png "BERG") BERGCloud [![Gem Version](https://badge.fury.io/rb/bergcloud.svg)](http://badge.fury.io/rb/bergcloud) [![Build Status](https://travis-ci.org/alfo/bergcloud.svg)](https://travis-ci.org/alfo/bergcloud) [![Code Climate](https://codeclimate.com/github/alfo/bergcloud.png)](https://codeclimate.com/github/alfo/bergcloud)
 
 A gem for interacting with [BERG's Cloud API v2](http://bergcloud.com/devcenter/api/v2/cloud-v2)
 
